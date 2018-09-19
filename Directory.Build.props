@@ -1,0 +1,90 @@
+<Project>
+    <PropertyGroup>
+        <FSharp.Core_Version>4.5.2</FSharp.Core_Version>
+        <Xamarin.Forms_Version>3.1.0.697729</Xamarin.Forms_Version>
+        <Xamarin.Forms.Maps_Version>3.1.0.697729</Xamarin.Forms.Maps_Version>
+        <Newtonsoft.Json_Version>11.0.2</Newtonsoft.Json_Version>
+        <Oxy.Plot.Core_Version>2.0.0-unstable0956</Oxy.Plot.Core_Version>
+        <OxyPlot.Xamarin.Forms_Version>1.1.0-unstable0013</OxyPlot.Xamarin.Forms_Version>
+        <SkiaSharp_Version>1.60.3</SkiaSharp_Version>
+        <SkiaSharp.View.Forms_Version>1.60.3</SkiaSharp.View.Forms_Version>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <Xamarin.Android.FSharp.ResourceProvider_Version>1.0.0.25</Xamarin.Android.FSharp.ResourceProvider_Version>
+        <Xamarin.Android.Arch.Core.Common_Version>1.0.0.1</Xamarin.Android.Arch.Core.Common_Version>
+        <Xamarin.Android.Arch.Core.Runtime_Version>1.0.0.1</Xamarin.Android.Arch.Core.Runtime_Version>
+        <Xamarin.Android.Arch.Lifecycle.Common_Version>1.0.3.1</Xamarin.Android.Arch.Lifecycle.Common_Version>
+        <Xamarin.Android.Arch.Lifecycle.Runtime_Version>1.0.3.1</Xamarin.Android.Arch.Lifecycle.Runtime_Version>
+        <Xamarin.Android.Support.Animated.Vector.Drawable_Version>27.0.2.1</Xamarin.Android.Support.Animated.Vector.Drawable_Version>
+        <Xamarin.Android.Support.Annotations_Version>27.0.2.1</Xamarin.Android.Support.Annotations_Version>
+        <Xamarin.Android.Support.Compat_Version>27.0.2.1</Xamarin.Android.Support.Compat_Version>
+        <Xamarin.Android.Support.Core.UI_Version>27.0.2.1</Xamarin.Android.Support.Core.UI_Version>
+        <Xamarin.Android.Support.Core.Utils_Version>27.0.2.1</Xamarin.Android.Support.Core.Utils_Version>
+        <Xamarin.Android.Support.Design_Version>27.0.2.1</Xamarin.Android.Support.Design_Version>
+        <Xamarin.Android.Support.Fragment_Version>27.0.2.1</Xamarin.Android.Support.Fragment_Version>
+        <Xamarin.Android.Support.Media.Compat_Version>27.0.2.1</Xamarin.Android.Support.Media.Compat_Version>
+        <Xamarin.Android.Support.Transition_Version>27.0.2.1</Xamarin.Android.Support.Transition_Version>
+        <Xamarin.Android.Support.v4_Version>27.0.2.1</Xamarin.Android.Support.v4_Version>
+        <Xamarin.Android.Support.v7.AppCompat_Version>27.0.2.1</Xamarin.Android.Support.v7.AppCompat_Version>
+        <Xamarin.Android.Support.v7.CardView_Version>27.0.2.1</Xamarin.Android.Support.v7.CardView_Version>
+        <Xamarin.Android.Support.v7.MediaRouter_Version>27.0.2.1</Xamarin.Android.Support.v7.MediaRouter_Version>
+        <Xamarin.Android.Support.v7.Palette_Version>27.0.2.1</Xamarin.Android.Support.v7.Palette_Version>
+        <Xamarin.Android.Support.v7.RecyclerView_Version>27.0.2.1</Xamarin.Android.Support.v7.RecyclerView_Version>
+        <Xamarin.Android.Support.Vector.Drawable_Version>27.0.2.1</Xamarin.Android.Support.Vector.Drawable_Version>
+    </PropertyGroup>
+
+    <!-- Packages common to all projects -->
+    <ItemGroup>
+        <PackageReference Include="FSharp.Core" Version="$(FSharp.Core_Version)" />
+        <PackageReference Update="FSharp.Core" Version="$(FSharp.Core_Version)" /> <!-- workaround for VSMac bug https://github.com/mono/monodevelop/pull/5137 --> 
+        <PackageReference Include="Xamarin.Forms" Version="$(Xamarin.Forms_Version)" />
+    </ItemGroup>
+
+    <!-- Fabulous.LiveUpdate -->
+    <ItemGroup Condition="$(MSBuildProjectName) == 'Fabulous.LiveUpdate'">
+        <PackageReference Include="Newtonsoft.Json" Version="$(Newtonsoft.Json_Version)" />
+    </ItemGroup>
+
+    <!-- Fabulous.Maps -->
+    <ItemGroup Condition="$(MSBuildProjectName) == 'Fabulous.Maps'">
+        <PackageReference Include="Xamarin.Forms.Maps" Version="$(Xamarin.Forms.Maps_Version)" />
+    </ItemGroup>
+
+    <!-- Fabulous.OxyPlot -->
+    <ItemGroup Condition="$(MSBuildProjectName) == 'Fabulous.OxyPlot'">
+        <PackageReference Include="OxyPlot.Core" Version="$(Oxy.Plot.Core_Version)" />
+        <PackageReference Include="OxyPlot.Xamarin.Forms" Version="$(OxyPlot.Xamarin.Forms_Version)" />
+    </ItemGroup>
+
+    <!-- Fabulous.SkiaSharp -->
+    <ItemGroup Condition="$(MSBuildProjectName) == 'Fabulous.SkiaSharp'">
+        <PackageReference Include="SkiaSharp" Version="$(SkiaSharp_Version)" />
+        <PackageReference Include="SkiaSharp.Views.Forms" Version="$(SkiaSharp.View.Forms_Version)" />
+    </ItemGroup>
+
+    <!-- Samples AllControls.Droid -->
+    <ItemGroup Condition="$(MSBuildProjectName) == 'AllControls.Droid'">
+        <PackageReference Include="Xamarin.Android.FSharp.ResourceProvider" Version="$(Xamarin.Android.FSharp.ResourceProvider_Version)" />
+        <PackageReference Include="Xamarin.Android.Arch.Core.Common" Version="$(Xamarin.Android.Arch.Core.Common_Version)" />
+        <PackageReference Include="Xamarin.Android.Arch.Core.Runtime" Version="$(Xamarin.Android.Arch.Core.Runtime_Version)" />
+        <PackageReference Include="Xamarin.Android.Arch.Lifecycle.Common" Version="$(Xamarin.Android.Arch.Lifecycle.Common_Version)" />
+        <PackageReference Include="Xamarin.Android.Arch.Lifecycle.Runtime" Version="$(Xamarin.Android.Arch.Lifecycle.Runtime_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Animated.Vector.Drawable" Version="$(Xamarin.Android.Support.Animated.Vector.Drawable_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Annotations" Version="$(Xamarin.Android.Support.Annotations_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Compat" Version="$(Xamarin.Android.Support.Compat_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Core.UI" Version="$(Xamarin.Android.Support.Core.UI_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Core.Utils" Version="$(Xamarin.Android.Support.Core.Utils_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Design" Version="$(Xamarin.Android.Support.Design_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Fragment" Version="$(Xamarin.Android.Support.Fragment_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Media.Compat" Version="$(Xamarin.Android.Support.Media.Compat_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Transition" Version="$(Xamarin.Android.Support.Transition_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.v4" Version="$(Xamarin.Android.Support.v4_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="$(Xamarin.Android.Support.v7.AppCompat_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="$(Xamarin.Android.Support.v7.CardView_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="$(Xamarin.Android.Support.v7.MediaRouter_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.v7.Palette" Version="$(Xamarin.Android.Support.v7.Palette_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView" Version="$(Xamarin.Android.Support.v7.RecyclerView_Version)" />
+        <PackageReference Include="Xamarin.Android.Support.Vector.Drawable" Version="$(Xamarin.Android.Support.Vector.Drawable_Version)" />
+    </ItemGroup>
+</Project>
