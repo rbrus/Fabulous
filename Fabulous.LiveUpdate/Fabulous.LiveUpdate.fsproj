@@ -1,14 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Versions.props" />
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <OtherFlags>/warnon:1182</OtherFlags>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Fabulous.LiveUpdate</PackageId>
+    <PackageTags>LiveUpdate;Android;iOS</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\fscd\CodeModel.fs" Link="CodeModel.fs" />
     <Compile Include="..\fscd\Interpreter.fs" Link="Interpreter.fs" />
-    <None Include="paket.template" />
-    <Compile Include="AssemblyInfo.fs" />
     <Compile Include="LiveUpdate.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="$(FSharp_Core_Version)" />
+    <PackageReference Include="Xamarin.Forms" Version="$(Xamarin_Forms_Version)" />
+    <PackageReference Include="Newtonsoft.Json" Version="$(Newtonsoft_Json_Version)" />
+    <!-- <PackageReference Include="Microsoft.SourceLink.Github" Version="$(Microsoft_SourceLink_Github)" PrivateAssets="All" /> -->
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fabulous.Core\Fabulous.Core.fsproj" />

@@ -2,7 +2,7 @@
 
 // F# Compiler Daemon sample
 //
-// Sample use, assumes app has a reference to ELmish.XamrinForms.LiveUpdate:
+// Sample use, assumes app has a reference to Fabulous.LiveUpdate:
 //
 // cd Fabulous\Samples\CounterApp\CounterApp
 //   adb -d forward  tcp:9867 tcp:9867

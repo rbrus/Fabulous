@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../Versions.props" />
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <OtherFlags>/warnon:1182</OtherFlags>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Fabulous.Core</PackageId>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="paket.template" />
-    <Compile Include="AssemblyInfo.fs" />
     <Compile Include="ViewElement.fs" />
     <Compile Include="ViewConverters.fs" />
     <Compile Include="Xamarin.Forms.Core.fs" />
@@ -16,5 +17,10 @@
     <Compile Include="StaticViewModel.fs" />
     <Compile Include="StaticViewNav.fs" />
     <Compile Include="StaticViewProgram.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="$(FSharp_Core_Version)" />
+    <PackageReference Include="Xamarin.Forms" Version="$(Xamarin_Forms_Version)" />
+    <!-- <PackageReference Include="Microsoft.SourceLink.Github" Version="$(Microsoft_SourceLink_Github)" PrivateAssets="All" /> -->
   </ItemGroup>
 </Project>
