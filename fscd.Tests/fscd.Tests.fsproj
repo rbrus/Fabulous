@@ -1,13 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="../Versions.props" />
   <PropertyGroup>
     <TargetFramework>net471</TargetFramework>
-
     <OutputType>Library</OutputType>
     <IsPackable>false</IsPackable>
     <DefineConstants>$(DefineConstants);TEST</DefineConstants>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="..\fscd\ProjectCracker.fs" Link="ProjectCracker.fs" />
     <Compile Include="..\fscd\CodeModel.fs" Link="CodeModel.fs" />
@@ -16,7 +14,6 @@
     <Compile Include="..\fscd\fscd.fs" Link="fscd.fs" />
     <Compile Include="Tests.fs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Dotnet.ProjInfo" Version="$(Dotnet_ProjInfo_Version)" />
     <PackageReference Include="FSharp.Core" Version="$(FSharp_Core_Version)" />
@@ -25,10 +22,8 @@
     <PackageReference Include="MSTest.TestFramework" Version="$(MSTest_TestFramework_Version)" />
     <PackageReference Include="FSharp.Compiler.Service" Version="$(FSharp_Compiler_Service_Version)" />
     <PackageReference Include="Newtonsoft.Json" Version="$(Newtonsoft_Json_Version)" />
-</ItemGroup>
-
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Fabulous.Core\Fabulous.Core.fsproj" />
   </ItemGroup>
-
 </Project>
